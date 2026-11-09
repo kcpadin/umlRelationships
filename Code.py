@@ -5,7 +5,7 @@ class Animal:
 
 class Dog(Animal):
     def bark(self):
-        return f"{self.name} says Woof!"
+        return f"{self.name} barks. They cant meow. they are't a cat."
 
 pet1 = Dog("Carlos")
 print(pet1.bark())
@@ -26,3 +26,16 @@ for room in House1.rooms:
 my_house = House()
 for room in my_house.rooms:
     print (r"Room created: {room.name}")
+
+#Aggregatorion 
+
+class Book:
+    def __init__(self,title: str):
+        self.title = title
+
+    def __del__(sefl):
+        print(f"Book has been claimed by the Guest. '{self.title}' is no longer in your hands.")
+
+class Libarry:
+    def __init__(self, books: list[Book] = None):
+        self.books = books if books else []
