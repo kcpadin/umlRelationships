@@ -58,3 +58,23 @@ print (f"Still active in The City -> book1: {book1.title}")
 print (f"Still active in The City -> book2: {book2.title}")
 
 #Association
+class Guest:
+    def __init__(self, name: str) :
+        self.name = name
+        self.receptions = []
+
+class Reception:
+    def __init__(self, order_id: str, guest: Guest):
+        self.reception_id = reception_id
+        self.guest = guest
+        guest.reception.append(self)
+dawn = Guest("The Dawn Office")
+reception_1 = Reception("Dawn Office", dawn)
+reception_2 = Reception("Assist from Wedge Office", dawn)
+
+print(f"Guest Profile: {dawn.name}")
+print("Receptions of Guest:")
+for o in dawn.receptions:
+    print (f" - Reception: {o.reception_id}")
+
+print(f"\nReception of the Dawn Office from the {reception_1.guest.name}")
