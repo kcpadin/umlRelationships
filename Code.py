@@ -11,6 +11,7 @@ pet1 = Dog("Carlos")
 print(pet1.bark())
 
 #CPOMPOSITION
+
 class Room:
     def __init__ (self,name: str):
         self.name = name
@@ -36,6 +37,13 @@ class Book:
     def __del__(sefl):
         print(f"Book has been claimed by the Guest. '{self.title}' is no longer in your hands.")
 
-class Libarry:
+class Library:
     def __init__(self, books: list[Book] = None):
         self.books = books if books else []
+
+    def __del__(self):
+        print ("The Library has been destroyed by the Arbiters.")
+book1 = Book("Book of Salvador")
+book2 = Book("Book of Yuna")
+
+my_library = Library(
