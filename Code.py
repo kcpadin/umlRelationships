@@ -46,4 +46,15 @@ class Library:
 book1 = Book("Book of Salvador")
 book2 = Book("Book of Yuna")
 
-my_library = Library(
+my_library = Library([book1, book2])
+print (f"Library has: {b.title for b in my_library.books]}")
+
+print ("\nArbiters arriving at The Library...")
+del my_library
+
+print ("\nChecking books after destruction of The Library")
+print (f"Still active in The City -> book1: {book1.title}")
+
+print (f"Still active in The City -> book2: {book2.title}")
+
+#Association
