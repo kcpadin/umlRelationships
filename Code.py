@@ -50,6 +50,7 @@ my_library = Library([book1, book2])
 print (f"Library has: {b.title for b in my_library.books]}")
 
 print ("\nArbiters arriving at The Library...")
+print ("\n[???]: Ahh... The Library, lets finish this place up, Bari.")
 del my_library
 
 print ("\nChecking books after destruction of The Library")
@@ -78,3 +79,23 @@ for o in dawn.receptions:
     print (f" - Reception: {o.reception_id}")
 
 print(f"\nReception of the Dawn Office from the {reception_1.guest.name}")
+
+#Dependency :sob:
+
+class Printer:
+    def print_page(self, text: str):
+        print(f"Printing: {text}")
+
+class ReportGenerator:
+    def __init__(self, content: str):
+        self.content = content
+    def output_report(self, printer_device: Printer):
+        printer_device.print_page(self.content)
+my_printer = Printer()
+quarter_report = ReportGenerator("Q1 Academic Performance: HORRIBLE!!!!")
+quarter_report.output_report(my_printer)
+
+#Realization (OF FLOORSIN LIBARRY OF RUINAA MENTIONEDDD)
+from abc import ABC, abstractmethod
+class PaymentProcessor(ABC):
+    
